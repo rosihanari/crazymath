@@ -38,7 +38,7 @@
 	<?php
 		if ($_SESSION['lives'] == 0){
 			echo "<h2>Game Over !!!</h2>";
-			echo "<p><a href='gamepenjumlahan.php'>Ulangi Lagi</a></p>";
+			echo "<p><a href='index.php'>Ulangi Lagi</a></p>";
 		} else {
 	?>
 	<form method="post" action="action.php">
