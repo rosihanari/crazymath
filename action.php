@@ -61,6 +61,17 @@
 			// simpan skor dan waktu main ke dalam cookie
 			setcookie('score', $_SESSION['score'], time()+3600*24*7);
 			setcookie('lasttime', date('d/m/Y H:i'), time()+3600*24*7);
+
+			// bagian kode untuk insert data username, score, playtime ke tabel scores
+
+			include "dbconfig.php";
+			$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+			$query = "INSERT INTO scores (username, score, playtime) VALUES ('".$_COOKIE['username']."', ".$_SESSION['score'].", '".date('Y-m-d H:i:s')."')";
+
+			// jalankan query
+			$result = mysqli_query($db, $query);
+
 		} else {
 	?>
 	<form method="post" action="action.php">
