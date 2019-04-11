@@ -66,13 +66,8 @@
 
 			include 'dbconfig.php';
 
-			$ip = $_SERVER['REMOTE_ADDR'];
-			$xml = simplexml_load_file("http://ip-api.com/xml/".$ip);
-			$negara = $xml->country;
-			$isp = $xml->isp;
-
 			$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-			$query = "INSERT INTO scores (username, score, playtime, ipaddress, country, isp) VALUES ('".$_COOKIE['username']."', ".$_SESSION['score'].", '".date('Y-m-d H:i:s')."', '$ip', '$negara', '$isp')";
+			$query = "INSERT INTO scores (username, score, playtime) VALUES ('".$_COOKIE['username']."', ".$_SESSION['score'].", '".date('Y-m-d H:i:s')."')";
 			$hasil = mysqli_query($db, $query);
 
 
