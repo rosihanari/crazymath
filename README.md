@@ -1,7 +1,4 @@
-###################
-CrazyMath Project
-###################
-Dibuat oleh: Rosihan Ari Yuana
+# Dibuat oleh: Rosihan Ari Yuana
 
 Aplikasi game sederhana yang dibuat dengan PHP, untuk melatih kemampuan perhitungan penjumlahan.
 Game rule:
