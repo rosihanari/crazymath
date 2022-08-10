@@ -24,14 +24,8 @@ CREATE TABLE `scores` (
   `username` varchar(30) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   `playtime` datetime DEFAULT NULL,
-  `foto` varchar(100) DEFAULT NULL,
+  `ipaddress` varchar(20) DEFAULT NULL, 
+  `country` varchar(50) DEFAULT NULL, 
+  `isp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of scores
--- ----------------------------
-INSERT INTO `scores` VALUES ('2', 'rosihanari', '30', '2019-04-08 10:26:22', 'myfoto.jpg');
-INSERT INTO `scores` VALUES ('3', 'rosihanari', '0', '2019-04-08 10:26:51', 'myfoto.jpg');
-INSERT INTO `scores` VALUES ('4', 'rosihanari', '0', '2019-04-08 10:27:11', 'myfoto.jpg');
-INSERT INTO `scores` VALUES ('5', 'rosihanari', '-5', '2019-04-08 10:27:34', 'myfoto.jpg');
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
