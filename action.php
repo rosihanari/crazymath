@@ -58,6 +58,7 @@
 		if ($_SESSION['lives'] == 0){
 			echo "<h2>Game Over !!!</h2>";
 			echo "<p><a href='index.php'>Ulangi Lagi</a></p>";
+
 			// simpan skor dan waktu main ke dalam cookie
 			setcookie('score', $_SESSION['score'], time()+3600*24*7);
 			setcookie('lasttime', date('d/m/Y H:i'), time()+3600*24*7);
@@ -66,11 +67,13 @@
 
 			include 'dbconfig.php';
 
+			// membaca data No IP, negara, nama ISP via REST API
 			$ip = $_SERVER['REMOTE_ADDR'];
 			$xml = simplexml_load_file("http://ip-api.com/xml/".$ip);
 			$negara = $xml->country;
 			$isp = $xml->isp;
 
+			// simpan data score ke tabel
 			$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 			$query = "INSERT INTO scores (username, score, playtime, ipaddress, country, isp) VALUES ('".$_COOKIE['username']."', ".$_SESSION['score'].", '".date('Y-m-d H:i:s')."', '$ip', '$negara', '$isp')";
 			$hasil = mysqli_query($db, $query);
